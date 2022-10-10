@@ -1,0 +1,4 @@
+name: build pipeline
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

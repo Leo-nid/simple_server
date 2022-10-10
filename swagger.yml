@@ -1,0 +1,34 @@
+openapi: 3.0.3
+info:
+  title: Experimental API
+  description: Computing simple math function
+  version: 1.0.0
+servers:
+  - url: http://localhost:8888/
+tags:
+  - name: algo
+paths:
+  /sort:
+    post:
+      tags:
+        - algo
+      summary: Sort the array of numbers
+      operationId: sort
+      requestBody:
+        description: Taking the array of numbers as input, returning sorted array.
+        content:
+          text/plain:
+            schema:
+              type: string
+              example: 2 533 1 6 3 6 1 -4
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            text/plain:
+              schema: 
+                type: number
+                example: -4 1 1 2 3 6 6 533
+        '400':
+          description: Validation exception
