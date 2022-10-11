@@ -18,11 +18,11 @@ class MyServer(BaseHTTPRequestHandler):
     self.wfile.write(bytes(rslt_msg, "utf-8"))
     
   def do_GET(self):
-    logger.debug(f"GET request with path {self.pth}")
+    logger.debug(f"GET request with path {self.path}")
     self.error_response(404, "Page not found")
 
   def do_POST(self):
-    logger.debug(f"POST request with path {self.pth}")
+    logger.debug(f"POST request with path {self.path}")
     content_length = int(self.headers["Content-Length"])
     post_data = self.rfile.read(content_length)
     if self.path == "/sort":
