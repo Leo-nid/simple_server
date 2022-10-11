@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import logging
+import algo
 
 logger = logging.getLogger()
 
@@ -30,7 +31,8 @@ class MyServer(BaseHTTPRequestHandler):
       except ValueError:
         self.error_response(400, "Message should contains only integer numbers separated by spaces")
         return
-      result = ' '.join(map(str, sorted(numbers))) + '\n'
+      algo.quick_sort(numbers)
+      result = ' '.join(map(str, numbers)) + '\n'
       self.send_response(200)
       self.send_header("Access-Control-Allow-Origin", "*")
       self.send_header("Content-type", "text/plain")
