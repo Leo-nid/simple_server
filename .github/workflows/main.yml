@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag server-image:$(date +%s)
-    - name: Run Docker image
-      run: docker run -d -p 127.0.0.1:8888:8888 --name eserv server-image
+    - name: build&run the Docker image
+        runs:
+          using: 'docker'
+          image: 'Dockerfile'
