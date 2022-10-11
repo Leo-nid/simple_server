@@ -15,5 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: build&run the Docker image
-        using: 'docker'
-        image: 'Dockerfile'
+      using: 'docker'
+      image: 'Dockerfile'
