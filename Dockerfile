@@ -9,4 +9,4 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
 
 COPY . /code
 
-CMD ["python3", "code/test_docker.py"]
+CMD ["python3", "/code/test_docker.py"]
