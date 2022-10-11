@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install --yes --no-install-recommends \
     python3
 
-RUN pip3 install requests
+RUN python3 -m pip3 install requests
 
 COPY . /code
 
